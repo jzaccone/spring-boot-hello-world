@@ -6,12 +6,3 @@ docker.image('maven:3.3.3-jdk-8').inside {
           mvn -B clean install'''
 }
 
-stage "build docker image"
-def newApp = docker.build "jzaccone/hello-rva"
-newApp.push()
-
-stage "sonar check"
-stage "fortify"
-stage "deploy to dev"
-stage "ATDD"
-
